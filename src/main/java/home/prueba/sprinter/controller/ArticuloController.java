@@ -2,6 +2,9 @@ package home.prueba.sprinter.controller;
 
 import home.prueba.sprinter.model.Articulo;
 import home.prueba.sprinter.service.ArticuloService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,11 +24,13 @@ public class ArticuloController {
     @Autowired
     private ArticuloService articuloService;
 
+    @Operation(summary = "Obtiene todos los artículos")
     @GetMapping
     public List<Articulo> obtenerTodos(){
         return articuloService.obtenerTodos();
     }
 
+    @Operation(summary = "Obtiene artículo concreto")
     @GetMapping("/{id}")
     public ResponseEntity<Articulo> obtenerPorId(@PathVariable Long id) {
         return articuloService.obtenerArticuloPorId(id)
@@ -33,6 +38,11 @@ public class ArticuloController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "Crea un nuevo artículo")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Artículo creado exitosamente"),
+            @ApiResponse(responseCode = "400", description = "Solicitud no válida")
+    })
     @PostMapping
     public ResponseEntity<Articulo> crear(@RequestBody Articulo articulo) {
         return new ResponseEntity<>(articuloService.crearArticulo(articulo), HttpStatus.CREATED);
