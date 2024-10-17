@@ -1,6 +1,6 @@
 package home.prueba.sprinter.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Caracteristicas {

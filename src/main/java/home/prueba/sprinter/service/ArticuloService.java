@@ -2,7 +2,7 @@ package home.prueba.sprinter.service;
 
 import home.prueba.sprinter.model.Articulo;
 import home.prueba.sprinter.repository.ArticuloRepository;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

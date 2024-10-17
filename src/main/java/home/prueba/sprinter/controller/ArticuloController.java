@@ -22,7 +22,7 @@ Este archivo mapea los endpoints HTTP y utiliza el servicio ArticuloService para
 /*
 * Una vez añadidas las anotaciones de Swagger
 * Para utilizarlo debemos lanzar la aplicacion
-* y acceder a: http://localhost:8080/swagger-ui/index.html
+* y acceder a: http://localhost:8080/swagger-ui.html
 * */
 @RestController
 @RequestMapping("/api/articulos")

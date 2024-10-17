@@ -1,6 +1,6 @@
 package home.prueba.sprinter.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import home.prueba.sprinter.model.Caracteristicas;
 import java.math.BigDecimal;
 import java.util.List;
