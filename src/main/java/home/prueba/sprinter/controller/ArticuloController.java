@@ -18,6 +18,12 @@ import java.util.List;
 El controlador expone los endpoints REST para las operaciones CRUD.
 Este archivo mapea los endpoints HTTP y utiliza el servicio ArticuloService para realizar las operaciones correspondientes.
  */
+
+/*
+* Una vez añadidas las anotaciones de Swagger
+* Para utilizarlo debemos lanzar la aplicacion
+* y acceder a: http://localhost:8080/swagger-ui/index.html
+* */
 @RestController
 @RequestMapping("/api/articulos")
 public class ArticuloController {
